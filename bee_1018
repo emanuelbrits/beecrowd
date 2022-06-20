@@ -1,0 +1,31 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    let n = Number(lines[0])
+    
+    let q = n
+    const n100 = Math.trunc(q/100)
+    q = q % 100
+    const n50 = Math.trunc(q/50)
+    q = q % 50
+    const n20 = Math.trunc(q/20)
+    q = q % 20
+    const n10 = Math.trunc(q/10)
+    q = q % 10
+    const n5 = Math.trunc(q/5)
+    q = q % 5
+    const n2 = Math.trunc(q/2)
+    q = q % 2
+    const n1 = q
+    
+    console.log(`${n}`)
+    console.log(`${n100} nota(s) de R$ 100,00`)
+    console.log(`${n50} nota(s) de R$ 50,00`)
+    console.log(`${n20} nota(s) de R$ 20,00`)
+    console.log(`${n10} nota(s) de R$ 10,00`)
+    console.log(`${n5} nota(s) de R$ 5,00`)
+    console.log(`${n2} nota(s) de R$ 2,00`)
+    console.log(`${n1} nota(s) de R$ 1,00`)
+}
+main()

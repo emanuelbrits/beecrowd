@@ -1,0 +1,18 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    let i = Number(lines[0])
+    let q = i
+    
+    const a = Math.trunc(q/365)
+    q = q%365
+    const m = Math.trunc(q/30)
+    q = q%30
+    const d = q
+    
+    console.log(`${a} ano(s)`)
+    console.log(`${m} mes(es)`)
+    console.log(`${d} dia(s)`)
+}
+main()

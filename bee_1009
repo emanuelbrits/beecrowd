@@ -1,0 +1,13 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    const nome = Number(lines[0])
+    const sal = Number(lines[1])
+    const ven = Number(lines[2])
+    
+    const s = sal + (ven * 0.15)
+    
+    console.log(`TOTAL = R$ ${s.toFixed(2)}`)
+}
+main()

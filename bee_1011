@@ -1,0 +1,11 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    const R = Number(lines[0])
+    
+    const vol = (4/3)*3.14159*R**3
+    
+    console.log(`VOLUME = ${vol.toFixed(3)}`)
+}
+main()

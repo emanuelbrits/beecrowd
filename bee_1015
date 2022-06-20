@@ -1,0 +1,20 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    const line1 = lines[0]
+    const line2 = lines[1]
+    
+    const x1y1 = line1.split(' ')
+    const x1 = Number(x1y1[0])
+    const y1 = Number(x1y1[1])
+    
+    const x2y2 = line2.split(' ')
+    const x2 = Number(x2y2[0])
+    const y2 = Number(x2y2[1])
+    
+    const d = Math.sqrt((x2-x1)**2+(y2-y1)**2)
+    
+    console.log(`${d.toFixed(4)}`)
+}
+main()

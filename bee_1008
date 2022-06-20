@@ -1,0 +1,14 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    const num = Number(lines[0])
+    const hora = Number(lines[1])
+    const valor = Number(lines[2])
+    
+    const sal = hora * valor
+    
+    console.log(`NUMBER = ${num}`)
+    console.log(`SALARY = U$ ${sal.toFixed(2)}`)
+}
+main()

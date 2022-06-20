@@ -1,0 +1,22 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+const line1 = lines[0]
+const line2 = lines[1]
+
+const val1 = line1.split(' ')
+const peca1 = Number(val1[0])
+const num1 = Number(val1[1])
+const uni1 = Number(val1[2])
+
+const val2 = line2.split(' ')
+const peca2 = Number(val2[0])
+const num2 = Number(val2[1])
+const uni2 = Number(val2[2])
+
+const preco = (num1 * uni1) + (num2 * uni2) 
+console.log(`VALOR A PAGAR: R$ ${preco.toFixed(2)}`)
+}
+main()
+

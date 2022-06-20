@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    const line1 = lines[0]
+    
+    const val = line1.split(' ')
+    const a = Number(val[0])
+    const b = Number(val[1])
+    const c = Number(val[2])
+
+    const ab = (a+b+Math.abs(a-b))/2
+    const abc = (ab+c+Math.abs(ab-c))/2
+    console.log(`${abc} eh o maior`)
+}
+main()

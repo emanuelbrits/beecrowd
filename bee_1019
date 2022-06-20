@@ -1,0 +1,15 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    let n = Number(lines[0])
+    let t = n
+    
+    const h = Math.trunc(t/3600)
+    t = t%3600
+    const m = Math.trunc(t/60)
+    const s = t%60
+   
+    console.log(`${h}:${m}:${s}`)
+}
+main()

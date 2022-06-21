@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+
+    const vetor = new Array(100)
+
+    for(let i = 0; i < vetor.length; i++){
+        vetor[i] = Number(lines[i])
+
+        if(vetor[i] <= 10){
+            console.log(`A[${i}] = ${vetor[i].toFixed(1)}`)
+        }
+    }
+}
+
+main()

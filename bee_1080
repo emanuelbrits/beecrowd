@@ -1,0 +1,26 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+
+    let index = 0
+    
+    let contador = 1
+    let numero = Number(lines[index++])
+    let maior = numero
+    let posicao = 1
+
+    while(contador < 100){
+        contador++
+        numero = Number(lines[index++])
+
+        if(numero > maior){
+            maior = numero
+            posicao = contador
+        }   
+    }
+
+    console.log(`${maior}`)
+    console.log(`${posicao}`)
+}
+main()

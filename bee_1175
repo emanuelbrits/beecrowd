@@ -1,0 +1,21 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+
+    const vetor = new Array(20)
+
+    for(let i = 0; i < vetor.length; i++){
+        vetor[i] = Number(lines[i])
+    }
+
+    let j = 0
+    for(let i = vetor.length - 1; i >= 0; i--){
+
+        console.log(`N[${j}] = ${vetor[i]}`)
+
+        j++
+    }
+}
+
+main()

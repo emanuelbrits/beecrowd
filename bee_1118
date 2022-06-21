@@ -1,0 +1,46 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    let index = 0
+    
+    let opcao = 1
+    
+    while(opcao === 1){
+        const nota1 = validar()
+        const nota2 = validar()
+
+        const media = (nota1 + nota2) / 2
+
+        console.log(`media = ${media.toFixed(2)}`)
+
+        opcao = obter_opcao()
+    }
+
+    function obter_opcao(){
+        console.log('novo calculo (1-sim 2-nao)')
+        
+        opcao = Number(lines[index++])
+    
+        while (opcao < 1 || opcao > 2){
+            console.log('novo calculo (1-sim 2-nao)')
+            opcao = Number(lines[index++])
+        }
+    
+        return opcao
+    }
+
+    function validar(){
+        let nota = Number(lines[index++])
+
+        while(nota < 0 || nota > 10){
+            console.log('nota invalida')
+            nota = Number(lines[index++])
+        }
+
+        return nota
+    }
+}
+
+main()

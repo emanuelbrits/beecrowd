@@ -1,0 +1,24 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+
+    const N = Number(lines[0])
+
+    const vetor = lines[1].split(' ').map(Number)
+
+    let menor = 99999999
+    let posicao_menor = 0
+
+    for(let i = 0; i < N; i++){
+        if(vetor[i] < menor){
+            menor = vetor[i]
+            posicao_menor = i
+        }
+    }
+
+    console.log(`Menor valor: ${menor}`)
+    console.log(`Posicao: ${posicao_menor}`)
+}
+
+main()

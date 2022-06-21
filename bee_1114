@@ -1,0 +1,16 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+
+    let index = 0
+    let senha = Number(lines[index++])
+
+    while(senha !== 2002){
+        console.log('Senha Invalida')
+        senha = Number(lines[index++])
+    }
+
+    console.log('Acesso Permitido')
+}
+main()

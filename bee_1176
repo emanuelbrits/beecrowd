@@ -1,0 +1,25 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+let index = 0
+
+function main(){
+
+    const T = Number(lines[index++])
+
+    for(let i = 0; i < T; i++){
+        const N = Number(lines[index++])
+        let anterior = 0
+        let atual = 1
+        let proximo
+        
+        for(let j = 0; j < N; j++){
+            proximo = anterior + atual
+            anterior = atual
+            atual = proximo
+        }
+
+        console.log(`Fib(${N}) = ${anterior}`)
+    }
+}
+
+main()

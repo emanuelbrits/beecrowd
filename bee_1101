@@ -1,0 +1,38 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    let index = 0
+
+    let [m, n] = lines[index++].split(' ').map(Number)
+    let menor, maior
+    let saida, entrada
+    let soma
+
+    while (!(m <= 0 || n <= 0)){
+        saida = ''
+        soma = 0
+        if (m > n){
+            maior = m
+            menor = n
+        }else{
+            maior = n
+            menor = m
+        }
+
+        while (menor <= maior){
+            soma += menor
+            saida = saida + `${menor} `
+            menor++
+        }
+
+        console.log(`${saida}Sum=${soma}`)
+
+        entrada = lines[index++].split(' ').map(Number)
+        m = entrada[0]
+        n = entrada[1]
+    }
+}
+
+main()

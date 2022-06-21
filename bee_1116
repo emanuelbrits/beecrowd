@@ -1,0 +1,45 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    let index = 0
+    
+    let contador = 1
+    let pares = Number(lines[index++])
+
+    let par = lines[index++].split(" ").map(Number)
+    let n1 = par[0]
+    let n2 = par[1]
+
+    
+    let divisao
+    
+    checar()
+
+    while(contador < pares){
+        par = lines[index++].split(" ").map(Number)
+        
+        n1 = par[0]
+        n2 = par[1]
+
+       checar()
+
+       contador++
+    }
+
+    function checar(){
+        
+        if(n2 === 0){
+            console.log("divisao impossivel")
+        }
+
+        if(n2 !==0){
+        
+            divisao = n1 / n2
+            console.log(`${divisao.toFixed(1)}`)}
+    }
+
+}
+
+main()

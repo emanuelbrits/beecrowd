@@ -1,0 +1,29 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    const n = lines[0].split(" ").map(Number)
+
+    const c = n[0]
+    const q = n[1]
+
+    if(c === 1){
+        const p = q * 4
+        console.log(`Total: R$ ${p.toFixed(2)}`)
+    }else if(c === 2){
+        const p = q * 4.5
+        console.log(`Total: R$ ${p.toFixed(2)}`)
+    }else if(c === 3){
+        const p = q * 5
+        console.log(`Total: R$ ${p.toFixed(2)}`)
+    }else if(c === 4){
+        const p = q * 2
+        console.log(`Total: R$ ${p.toFixed(2)}`)
+    }else if(c === 5){
+        const p = q * 1.5
+        console.log(`Total: R$ ${p.toFixed(2)}`)
+    }
+
+}   
+main()

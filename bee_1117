@@ -1,0 +1,34 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    let index = 0
+    
+    let nota = Number(lines[index++])
+    let qtd_notas = 0
+
+    let soma = 0
+
+    checar_nota()
+
+    while(qtd_notas < 2){
+        nota = Number(lines[index++])
+        checar_nota()
+    }
+    
+    const media = soma / 2
+
+    console.log(`media = ${media.toFixed(2)}`)
+    
+    function checar_nota(){
+        if(nota < 0 || nota > 10){
+            console.log('nota invalida')
+        }else{
+            soma += nota
+            qtd_notas++
+        }
+    }
+}
+
+main()

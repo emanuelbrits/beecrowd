@@ -1,0 +1,67 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    let index = 0
+    
+    let placar = lines[index++].split(" ").map(Number)
+    console.log("Novo grenal (1-sim 2-nao)")
+    let resposta = Number(lines[index++])
+    let grenais = 0
+
+    let gol_inter = placar[0]
+    let gol_gremio = placar[1]
+
+    let vi = 0
+    let vg = 0
+    let empate = 0
+
+    vitoria()
+
+    while(resposta === 1){
+        placar = lines[index++].split(" ").map(Number)
+        console.log("Novo grenal (1-sim 2-nao)")
+        resposta = Number(lines[index++])
+
+        gol_inter = placar[0]
+        gol_gremio = placar[1]
+        
+        vitoria()
+
+    }
+
+    function vitoria(){
+        if(gol_inter > gol_gremio){
+            vi++
+            grenais++
+        }
+
+        if(gol_gremio > gol_inter){
+            vg++
+            grenais++
+        }
+
+        if(gol_gremio === gol_inter){
+            empate++
+            grenais++
+        }
+
+    }
+
+    console.log(`${grenais} grenais`)
+    console.log(`Inter:${vi}`)
+    console.log(`Gremio:${vg}`)
+    console.log(`Empates:${empate}`)
+
+    if(vi > vg){
+        console.log("Inter venceu mais")
+    }
+    
+    if(vg > vi){
+        console.log("Gremio venceu mais")
+    }
+
+}
+
+main()

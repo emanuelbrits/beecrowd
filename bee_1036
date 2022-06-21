@@ -1,0 +1,38 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+function main(){
+    
+    const n = lines[0]
+
+    const [a, b, c] = n.split(" ").map(Number)
+
+    verificar()
+
+    function det(){
+        return (b ** 2) - (4 * a * c)
+    }
+
+    function raiz(){
+        return Math.sqrt(det())
+    }
+
+    function x1(){
+        return (-b + raiz()) / (2 * a)
+    }
+
+    function x2(){
+        return (-b - raiz()) / (2 * a)
+    }
+
+
+    function verificar(){
+        if(a !== 0 && det() >= 0 ){
+        console.log(`R1 = ${x1().toFixed(5)}`)
+        console.log(`R2 = ${x2().toFixed(5)}`)
+        }
+        if(a === 0 || det() <0){
+        console.log('Impossivel calcular')}
+    }
+}   
+main()
